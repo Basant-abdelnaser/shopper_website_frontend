@@ -1,0 +1,141 @@
+.header {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  background-color: white;
+  z-index: 99;
+  padding: 0px 15px;
+  text-align: center;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.logo img {
+  width: 45px;
+}
+
+.logo h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  flex: 1; /* Takes available space */
+  max-width: 500px; /* Prevents getting too wide */
+  margin: 0 20px; /* Added margin for spacing */
+}
+
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+}
+
+.nav-links ul li {
+  padding: 5px 10px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  font-weight: 500;
+  white-space: nowrap;
+  border-bottom: 2px solid transparent;
+}
+
+.nav-links ul li:hover,
+.nav-links ul li.active {
+  border-bottom: 2px solid orangered;
+  transform: translateY(-2px);
+}
+
+.login {
+  padding: 10px 30px;
+  background-color: white;
+  border: 1px solid #c2b9b9;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #c2b9b9;
+  transition: all 0.3s ease-in-out;
+  font-weight: 500;
+  margin-right: 20px; /* Space between button and cart */
+  white-space: nowrap;
+}
+
+.login:hover {
+  background-color: #c2b9b9;
+  color: white;
+  transform: scale(1.05); /* Add subtle scale effect */
+}
+
+.cart {
+  position: relative;
+  cursor: pointer;
+}
+
+.cart img {
+  width: 27px;
+  height: auto;
+}
+
+/* Optional: Add cart item count */
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: orangered;
+  color: white;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Responsive improvements */
+@media (max-width: 768px) {
+  .nav-items {
+    padding: 8px 0;
+  }
+
+  .nav-links ul {
+    gap: 15px;
+  }
+
+  .logo h2 {
+    font-size: 1.2rem;
+  }
+
+  .login {
+    padding: 8px 20px;
+    margin-right: 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    display: none; /* Hide nav links on very small screens */
+  }
+
+  .nav-items {
+    justify-content: space-between;
+  }
+
+  .login {
+    margin-right: 0;
+  }
+}
