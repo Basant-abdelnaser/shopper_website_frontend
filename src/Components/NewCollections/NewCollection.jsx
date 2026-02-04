@@ -4,7 +4,6 @@ import Item from "../../Item/Item";
 import "./NewCollection.css";
 const NewCollection = () => {
   const products = new_collections.map((product) => {
-    console.log(product.image);
     return (
       <Item
         image={product.image}
@@ -12,6 +11,7 @@ const NewCollection = () => {
         new_price={product.new_price}
         old_price={product.old_price}
         key={product.id}
+        id={product.id}
       />
     );
   });

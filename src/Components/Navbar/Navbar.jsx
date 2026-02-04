@@ -27,9 +27,9 @@ const Navbar = () => {
           <ul>
             <li>
               <NavLink
-                style={{ textDecoration: "none", color: "black" }}
                 to="/"
                 className={({ isActive }) => (isActive ? "active" : "")}
+                style={{ textDecoration: "none", color: "black" }}
               >
                 Shop
               </NavLink>
@@ -37,9 +37,9 @@ const Navbar = () => {
 
             <li>
               <NavLink
-                style={{ textDecoration: "none", color: "black" }}
                 to="/men"
                 className={({ isActive }) => (isActive ? "active" : "")}
+                style={{ textDecoration: "none", color: "black" }}
               >
                 Men
               </NavLink>
@@ -47,9 +47,9 @@ const Navbar = () => {
 
             <li>
               <NavLink
-                style={{ textDecoration: "none", color: "black" }}
                 to="/women"
                 className={({ isActive }) => (isActive ? "active" : "")}
+                style={{ textDecoration: "none", color: "black" }}
               >
                 Women
               </NavLink>
@@ -57,9 +57,9 @@ const Navbar = () => {
 
             <li>
               <NavLink
-                style={{ textDecoration: "none", color: "black" }}
                 to="/kids"
                 className={({ isActive }) => (isActive ? "active" : "")}
+                style={{ textDecoration: "none", color: "black" }}
               >
                 Kids
               </NavLink>

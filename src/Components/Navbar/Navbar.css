@@ -4,8 +4,7 @@
   top: 0;
   background-color: white;
   z-index: 99;
-  padding: 0px 15px;
-  text-align: center;
+  padding: 0 15px;
 }
 
 .nav-items {
@@ -15,9 +14,10 @@
   padding: 10px 0;
 }
 
+/* ================= Logo ================= */
 .logo {
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   gap: 10px;
   cursor: pointer;
 }
@@ -31,36 +31,45 @@
   font-size: 1.5rem;
 }
 
+/* ================= Nav Links ================= */
 .nav-links {
-  flex: 1; /* Takes available space */
-  max-width: 500px; /* Prevents getting too wide */
-  margin: 0 20px; /* Added margin for spacing */
+  flex: 1;
+  max-width: 500px;
+  margin: 0 20px;
 }
 
 .nav-links ul {
   list-style: none;
   display: flex;
-  padding: 0;
-  justify-content: center;
+  justify-content: space-evenly;
   gap: 30px;
+  padding: 0;
   margin: 0;
 }
 
 .nav-links ul li {
-  padding: 5px 10px;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
   font-weight: 500;
   white-space: nowrap;
+}
+
+/* NavLink itself */
+.nav-links ul li a {
+  text-decoration: none;
+  color: black;
+  padding-bottom: 6px;
+  display: inline-block;
+  transition: 0.3s;
   border-bottom: 2px solid transparent;
 }
 
-.nav-links ul li:hover,
-.nav-links ul li.active {
+/* Hover + Active */
+.nav-links ul li a:hover,
+.nav-links ul li a.active {
   border-bottom: 2px solid orangered;
   transform: translateY(-2px);
 }
 
+/* ================= Login Button ================= */
 .login {
   padding: 10px 30px;
   background-color: white;
@@ -68,18 +77,19 @@
   border-radius: 20px;
   cursor: pointer;
   color: #c2b9b9;
-  transition: all 0.3s ease-in-out;
   font-weight: 500;
-  margin-right: 20px; /* Space between button and cart */
+  margin-right: 20px;
   white-space: nowrap;
+  transition: 0.3s;
 }
 
 .login:hover {
   background-color: #c2b9b9;
   color: white;
-  transform: scale(1.05); /* Add subtle scale effect */
+  transform: scale(1.05);
 }
 
+/* ================= Cart ================= */
 .cart {
   position: relative;
   cursor: pointer;
@@ -87,10 +97,9 @@
 
 .cart img {
   width: 27px;
-  height: auto;
 }
 
-/* Optional: Add cart item count */
+/* Cart count badge */
 .cart-count {
   position: absolute;
   top: -8px;
@@ -106,12 +115,8 @@
   justify-content: center;
 }
 
-/* Responsive improvements */
+/* ================= Responsive ================= */
 @media (max-width: 768px) {
-  .nav-items {
-    padding: 8px 0;
-  }
-
   .nav-links ul {
     gap: 15px;
   }
@@ -128,17 +133,10 @@
 
 @media (max-width: 600px) {
   .nav-links {
-    display: none; /* Hide nav links on very small screens */
-  }
-
-  .nav-items {
-    justify-content: space-between;
+    display: none;
   }
 
   .login {
     margin-right: 0;
   }
-}
-link {
-  text-decoration: none !important;
 }

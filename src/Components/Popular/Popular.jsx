@@ -5,7 +5,6 @@ import "./Popular.css";
 
 const Popular = () => {
   const products = data_product.map((product) => {
-    console.log(product.image);
     return (
       <Item
         image={product.image}
@@ -13,6 +12,7 @@ const Popular = () => {
         new_price={product.new_price}
         old_price={product.old_price}
         key={product.id}
+        id={product.id}
       />
     );
   });

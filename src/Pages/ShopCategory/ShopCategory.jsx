@@ -6,24 +6,24 @@ import womenBanner from "../../Assets/banner_women.png";
 import kidsBanner from "../../Assets/banner_kids.png";
 import dropDownArrow from "../../Assets/dropdown_icon.png";
 import "./ShopCategory.css";
-import Footer from "../../Components/Footer/Footer";
 
 const ShopCategory = ({ category }) => {
-  const all_products = useContext(ShopContext);
+  const { all_product } = useContext(ShopContext);
+  console.log("allll", all_product);
   let filteredProducts = [];
   let banner = "";
   if (category === "women") {
-    filteredProducts = all_products.filter(
+    filteredProducts = all_product.filter(
       (product) => product.category === "women",
     );
     banner = womenBanner;
   } else if (category === "men") {
-    filteredProducts = all_products.filter(
+    filteredProducts = all_product.filter(
       (product) => product.category === "men",
     );
     banner = menBanner;
   } else {
-    filteredProducts = all_products.filter(
+    filteredProducts = all_product.filter(
       (product) => product.category === "kid",
     );
     banner = kidsBanner;
@@ -32,10 +32,7 @@ const ShopCategory = ({ category }) => {
     <div className="container  shopCategory">
       <img src={banner} alt="" className="banner" />
       <div className="text">
-        <p>
-          showing 1 - 12 out of {all_products.length} products
-        
-        </p>
+        <p>showing 1 - 12 out of {all_product.length} products</p>
         <div className="sort">
           {/* <select name="sort" id="sort">
           <option value="newest">price</option>
@@ -54,6 +51,7 @@ const ShopCategory = ({ category }) => {
               new_price={product.new_price}
               old_price={product.old_price}
               key={product.id}
+              id={product.id}
             />
           );
         })}
@@ -61,7 +59,6 @@ const ShopCategory = ({ category }) => {
       <div className="loadMore">
         <p>Load More </p>
       </div>
-      <Footer></Footer>
     </div>
   );
 };

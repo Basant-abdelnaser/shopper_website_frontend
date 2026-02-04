@@ -6,8 +6,12 @@ import ShopCategory from "./Pages/ShopCategory/ShopCategory";
 import Cart from "./Pages/Cart/Cart";
 import Product from "./Pages/Product/Product";
 import LoginSignup from "./Pages/LoginSignup/LoginSignup";
+import Footer from "./Components/Footer/Footer";
+import SignUp from "./Pages/LoginSignup/SignUp";
+import { ToastContainer } from "react-toastify";
 
 function App() {
+  
   return (
     <div>
       <BrowserRouter>
@@ -26,10 +30,13 @@ function App() {
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/product/:id" element={<Product />}></Route>
           <Route path="/login" element={<LoginSignup />}></Route>
+          <Route path="/signup" element={<SignUp />}></Route>
 
           <Route path="*" element={<h1>404</h1>}></Route>
         </Routes>
+        <Footer />
       </BrowserRouter>
+      <ToastContainer position="top-right" autoClose={2000} theme="colored" />
     </div>
   );
 }

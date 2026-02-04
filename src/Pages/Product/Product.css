@@ -1,0 +1,165 @@
+.productDetails {
+  display: flex;
+  gap: 40px;
+  margin: 40px auto;
+}
+
+/* ================= LEFT ================= */
+.leftDetails {
+  flex: 1;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: gray;
+  margin-bottom: 15px;
+}
+
+.imgContainer {
+  display: flex;
+  gap: 20px;
+}
+
+.leftImgs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.leftImgs img {
+  width: 90px;
+  border-radius: 10px;
+  cursor: pointer;
+  border: 1px solid #eee;
+}
+
+.rightImgs img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 15px;
+}
+
+/* ================= RIGHT ================= */
+.rightDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.rightDetails h1 {
+  font-size: 28px;
+  margin: 0;
+}
+
+.rating {
+  color: gold;
+  font-size: 18px;
+}
+
+.price {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 22px;
+}
+
+.price span {
+  color: orangered;
+  font-weight: 600;
+}
+
+.price del {
+  color: gray;
+  font-size: 18px;
+}
+
+.description {
+  color: #555;
+}
+
+/* ================= SIZE ================= */
+.selectSize ul {
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  padding: 0;
+}
+
+.selectSize ul li {
+  padding: 10px;
+  border: 2px solid gray;
+  border-radius: 10px;
+  cursor: pointer;
+  min-width: 45px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.selectSize ul li:hover {
+  background-color: orangered;
+  color: white;
+  border-color: orangered;
+}
+
+/* ================= BUTTON ================= */
+.addToCart {
+  width: 100%;
+  max-width: 260px;
+  padding: 14px;
+  background-color: orangered;
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  border: none;
+  font-size: 17px;
+  transition: 0.3s;
+}
+
+.addToCart:hover {
+  background-color: white;
+  color: orangered;
+  border: 1px solid orangered;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 900px) {
+  .productDetails {
+    flex-direction: column;
+  }
+
+  .imgContainer {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .leftImgs {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .rightImgs img {
+    max-width: 100%;
+  }
+
+  .addToCart {
+    max-width: 100%;
+  }
+}
+
+.rightDetails span {
+  font-weight: bold;
+}
+
+.rightDetails .selected {
+  background-color: orangered;
+  color: white;
+}
+.added {
+  background-color: green;
+  color: white;
+  transition: all 0.3s ease-in-out;
+}
+.added :hover {
+  background-color: rgb(30, 139, 30) !important;
+}
