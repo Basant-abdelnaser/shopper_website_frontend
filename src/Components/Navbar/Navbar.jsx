@@ -2,18 +2,19 @@ import React from "react";
 import "./Navbar.css";
 import logo from "../../Assets/logo.png";
 import cartIcon from "../../Assets/cart_icon.png";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
   const cartItemCount = 3;
-  const [active, setActive] = React.useState("shop");
 
   return (
     <div className="header">
       <div className="container nav-items">
+        {/* Logo */}
         <Link
           to="/"
-          style={{ textDecoration: "none", color: "black", border: "none" }}
+          className="logo-link"
+          style={{ textDecoration: "none", color: "black" }}
         >
           <div className="logo">
             <img src={logo} alt="logo" />
@@ -21,67 +22,57 @@ const Navbar = () => {
           </div>
         </Link>
 
+        {/* Navigation Links */}
         <div className="nav-links">
           <ul>
-            <li
-              onClick={() => {
-                setActive("shop");
-              }}
-              className={active === "shop" ? "active" : ""}
-            >
-              <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+            <li>
+              <NavLink
+                style={{ textDecoration: "none", color: "black" }}
+                to="/"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
                 Shop
-              </Link>
+              </NavLink>
             </li>
 
-            <li
-              onClick={() => {
-                setActive("men");
-              }}
-              className={active === "men" ? "active" : ""}
-            >
-              <Link
-                to="/men"
+            <li>
+              <NavLink
                 style={{ textDecoration: "none", color: "black" }}
+                to="/men"
+                className={({ isActive }) => (isActive ? "active" : "")}
               >
                 Men
-              </Link>
+              </NavLink>
             </li>
-            <li
-              onClick={() => {
-                setActive("women");
-              }}
-              className={active === "women" ? "active" : ""}
-            >
-              <Link
-                to="/women"
+
+            <li>
+              <NavLink
                 style={{ textDecoration: "none", color: "black" }}
+                to="/women"
+                className={({ isActive }) => (isActive ? "active" : "")}
               >
                 Women
-              </Link>
+              </NavLink>
             </li>
-            <li
-              onClick={() => {
-                setActive("kids");
-              }}
-              className={active === "kids" ? "active" : ""}
-            >
-              <Link
-                to="/kids"
+
+            <li>
+              <NavLink
                 style={{ textDecoration: "none", color: "black" }}
+                to="/kids"
+                className={({ isActive }) => (isActive ? "active" : "")}
               >
                 Kids
-              </Link>
+              </NavLink>
             </li>
           </ul>
         </div>
 
+        {/* Login Button */}
         <Link to="/login">
-          <button className="login" onClick={() => {}}>
-            Login
-          </button>
+          <button className="login">Login</button>
         </Link>
 
+        {/* Cart */}
         <Link to="/cart">
           <div className="cart">
             <img src={cartIcon} alt="Cart" />

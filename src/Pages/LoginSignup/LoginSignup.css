@@ -1,0 +1,72 @@
+.loginSignup {
+  background: linear-gradient(to bottom, #ffb6c1, #ffffff);
+  min-height: calc(100vh - 65px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.loginSignup .layer {
+  width: 100%;
+  max-width: 420px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.loginSignup h1 {
+  margin: 0;
+  font-weight: 600;
+  text-align: center;
+}
+
+.loginSignup input {
+  border: 1px solid #ddd;
+  padding: 14px;
+  border-radius: 12px;
+  font-size: 15px;
+}
+
+.loginSignup input:focus {
+  outline: none;
+  border-color: orangered;
+}
+
+.loginSignup button {
+  background-color: orangered;
+  color: white;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.loginSignup button:hover {
+  background-color: #ff4500;
+}
+
+.loginSignup p {
+  text-align: center;
+  font-size: 14px;
+}
+
+.loginSignup p span {
+  color: orangered;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.terms {
+  display: flex;
+  gap: 8px;
+  font-size: 13px;
+  color: #555;
+  align-items: flex-start;
+}

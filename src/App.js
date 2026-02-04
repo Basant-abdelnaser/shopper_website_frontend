@@ -25,7 +25,7 @@ function App() {
           ></Route>
           <Route path="/cart" element={<Cart />}></Route>
           <Route path="/product/:id" element={<Product />}></Route>
-          <Route path="login" element={<LoginSignup />}></Route>
+          <Route path="/login" element={<LoginSignup />}></Route>
 
           <Route path="*" element={<h1>404</h1>}></Route>
         </Routes>

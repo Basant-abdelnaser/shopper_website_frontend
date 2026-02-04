@@ -1,6 +1,5 @@
 import React from "react";
 import "./Item.css";
-import img from "../Assets/product_1.png";
 
 const Item = ({ image, name, new_price, old_price }) => {
   console.log("name is ", name);

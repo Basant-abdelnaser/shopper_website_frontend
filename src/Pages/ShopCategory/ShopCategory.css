@@ -1,0 +1,48 @@
+.shopCategory {
+  margin-top: 30px;
+}
+.shopCategory .banner {
+  max-width: inherit;
+}
+.shopCategory .text {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+.shopCategory .products {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  margin-bottom: 20px;
+}
+
+.shopCategory .text .sort {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  padding: 4px 15px;
+  border: 1px solid #c2b9b9;
+  border-radius: 20px;
+  height: 23px;
+}
+
+.loadMore {
+  padding: 10px 15px;
+  background-color: orangered;
+  color: white;
+  width: fit-content;
+  margin: 0 auto;
+  border-radius: 25px;
+  transition: all 0.3s ease-in-out;
+}
+.loadMore p {
+  margin: 0;
+}
+.loadMore :hover {
+  background-color: white;
+  color: orangered;
+  border: 1px solid orangered;
+}
