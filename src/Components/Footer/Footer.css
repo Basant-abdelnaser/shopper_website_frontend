@@ -22,8 +22,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 25px;
 }
+.footer-icons img {
+  cursor: pointer;
+}
+.footer-links ul li {
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.footer-links ul li:hover {
+  color: orangered;
+}
+
 @media (max-width: 768px) {
   .footer-links ul li {
     font-size: 15px;

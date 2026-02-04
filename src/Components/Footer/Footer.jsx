@@ -26,6 +26,13 @@ const Footer = () => {
         <img src={whatsapp} alt="" />
         <img src={pintrist} alt="" />
       </div>
+      <hr style={{ margin: "20px" }} />
+      <div
+        className="copyRight"
+        style={{ fontSize: "12px", marginTop: "20px" }}
+      >
+        <p>Copyright 2025 - All Rights Reserved</p>
+      </div>
     </div>
   );
 };
