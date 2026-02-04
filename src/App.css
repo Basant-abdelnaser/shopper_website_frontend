@@ -1,17 +1,27 @@
-/* Container styles */
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 16px;
+  box-sizing: border-box;
 }
+
 body {
   font-family: "Playpen Sans Arabic", cursive;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 900px;
+  }
 }
 
 @media (max-width: 768px) {
   .container {
     padding: 0 12px;
+    max-width: 100%;
   }
 }
 

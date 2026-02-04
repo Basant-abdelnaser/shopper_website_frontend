@@ -2,6 +2,7 @@ import React from "react";
 import "./Navbar.css";
 import logo from "../../Assets/logo.png";
 import cartIcon from "../../Assets/cart_icon.png";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const cartItemCount = 3;
@@ -10,10 +11,15 @@ const Navbar = () => {
   return (
     <div className="header">
       <div className="container nav-items">
-        <div className="logo">
-          <img src={logo} alt="logo" />
-          <h2>SHOPPER</h2>
-        </div>
+        <Link
+          to="/"
+          style={{ textDecoration: "none", color: "black", border: "none" }}
+        >
+          <div className="logo">
+            <img src={logo} alt="logo" />
+            <h2>SHOPPER</h2>
+          </div>
+        </Link>
 
         <div className="nav-links">
           <ul>
@@ -23,15 +29,23 @@ const Navbar = () => {
               }}
               className={active === "shop" ? "active" : ""}
             >
-              Shop
+              <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+                Shop
+              </Link>
             </li>
+
             <li
               onClick={() => {
                 setActive("men");
               }}
               className={active === "men" ? "active" : ""}
             >
-              Men
+              <Link
+                to="/men"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                Men
+              </Link>
             </li>
             <li
               onClick={() => {
@@ -39,7 +53,12 @@ const Navbar = () => {
               }}
               className={active === "women" ? "active" : ""}
             >
-              Women
+              <Link
+                to="/women"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                Women
+              </Link>
             </li>
             <li
               onClick={() => {
@@ -47,19 +66,30 @@ const Navbar = () => {
               }}
               className={active === "kids" ? "active" : ""}
             >
-              Kids
+              <Link
+                to="/kids"
+                style={{ textDecoration: "none", color: "black" }}
+              >
+                Kids
+              </Link>
             </li>
           </ul>
         </div>
 
-        <button className="login">Login</button>
+        <Link to="/login">
+          <button className="login" onClick={() => {}}>
+            Login
+          </button>
+        </Link>
 
-        <div className="cart">
-          <img src={cartIcon} alt="Cart" />
-          {cartItemCount > 0 && (
-            <div className="cart-count">{cartItemCount}</div>
-          )}
-        </div>
+        <Link to="/cart">
+          <div className="cart">
+            <img src={cartIcon} alt="Cart" />
+            {cartItemCount > 0 && (
+              <div className="cart-count">{cartItemCount}</div>
+            )}
+          </div>
+        </Link>
       </div>
     </div>
   );

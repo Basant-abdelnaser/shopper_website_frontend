@@ -1,0 +1,189 @@
+.hero {
+  min-height: calc(100vh - 65px); /* Changed from height to min-height */
+  height: auto; /* Allow content to expand */
+  background: linear-gradient(to bottom, #ffb6c1, #ffffff);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  box-sizing: border-box; /* Include padding in height calculation */
+  overflow: hidden; /* Prevent overflow */
+}
+
+h2 {
+  margin: 0;
+  line-height: 1.2; /* Better line spacing */
+}
+
+.handIcon {
+  width: 80px;
+  height: auto; /* Maintain aspect ratio */
+  margin-left: 10px;
+}
+
+.heroImg {
+  max-height: 80vh; /* Changed from fixed height to max-height */
+  height: auto;
+  max-width: 100%;
+  object-fit: contain; /* Maintain aspect ratio */
+}
+
+.hero-left {
+  max-width: 500px; /* Prevent text from becoming too wide */
+  padding: 20px;
+}
+
+.hero-left .new {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.hero-left h2 {
+  font-size: 60px;
+  font-weight: 700;
+  text-transform: uppercase; /* Consistent styling */
+  letter-spacing: 1px;
+}
+
+.hero-left h2:first-of-type {
+  font-size: 25px;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.latest-collection {
+  background-color: orangered;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 25px;
+  cursor: pointer;
+  border: none;
+  font-family: "Playpen Sans Arabic", cursive;
+  margin-top: 30px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+  font-weight: 600;
+  box-shadow: 0 4px 15px rgba(255, 69, 0, 0.2);
+}
+
+.latest-collection img {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.latest-collection:hover {
+  background-color: white;
+  color: orangered;
+  transform: translateY(-3px); /* Better than scale for buttons */
+  border: 1px solid orangered;
+  box-shadow: 0 6px 20px rgba(255, 69, 0, 0.3);
+}
+
+.latest-collection:hover img {
+  transform: translateX(5px); /* Arrow moves on hover */
+}
+
+.hero-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Responsive improvements */
+@media (max-width: 1024px) {
+  .hero {
+    justify-content: space-between;
+    gap: 40px;
+  }
+  
+  .hero-left h2 {
+    font-size: 50px;
+  }
+  
+  .heroImg {
+    max-height: 70vh;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px 20px;
+    text-align: center;
+  }
+  
+  .hero-left {
+    order: 2; /* Text comes after image on mobile */
+    max-width: 100%;
+  }
+  
+  .hero-right {
+    order: 1; /* Image comes first on mobile */
+    width: 100%;
+  }
+  
+  .hero-left h2 {
+    font-size: 40px;
+  }
+  
+  .heroImg {
+    max-height: 50vh;
+    max-width: 90%;
+  }
+  
+  .hero-left .new {
+    justify-content: center;
+  }
+  
+  .latest-collection {
+    margin: 30px auto 0; /* Center button */
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-left h2 {
+    font-size: 32px;
+  }
+  
+  .hero-left h2:first-of-type {
+    font-size: 20px;
+  }
+  
+  .handIcon {
+    width: 60px;
+  }
+  
+  .heroImg {
+    max-height: 40vh;
+  }
+  
+  .latest-collection {
+    padding: 12px 25px;
+    font-size: 14px;
+  }
+}
+
+/* Fix for very tall screens */
+@media (min-height: 1000px) {
+  .hero {
+    min-height: calc(100vh - 65px);
+    padding-top: 5vh;
+    padding-bottom: 5vh;
+  }
+  
+  .heroImg {
+    max-height: 70vh;
+  }
+}
