@@ -1,11 +1,24 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import "./Navbar.css";
 import logo from "../../Assets/logo.png";
 import cartIcon from "../../Assets/cart_icon.png";
 import { Link, NavLink } from "react-router-dom";
+import { ShopContext } from "../../Contexts/ShopContext";
+import all_product from "../../Assets/all_product";
 
 const Navbar = () => {
-  const cartItemCount = 3;
+  const { cart } = useContext(ShopContext);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const cartItems = Object.entries(cart)
+    .filter(([_, quantity]) => quantity > 0)
+    .map(([id, quantity]) => {
+      const product = all_product.find((p) => p.id === Number(id));
+      return product ? { ...product, quantity } : null;
+    })
+    .filter(Boolean);
+
+  const cartItemCount = cartItems.length;
 
   return (
     <div className="header">
@@ -22,66 +35,64 @@ const Navbar = () => {
           </div>
         </Link>
 
-        {/* Navigation Links */}
+        {/* Desktop Links */}
         <div className="nav-links">
           <ul>
-            <li>
-              <NavLink
-                to="/"
-                className={({ isActive }) => (isActive ? "active" : "")}
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                Shop
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink
-                to="/men"
-                className={({ isActive }) => (isActive ? "active" : "")}
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                Men
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink
-                to="/women"
-                className={({ isActive }) => (isActive ? "active" : "")}
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                Women
-              </NavLink>
-            </li>
-
-            <li>
-              <NavLink
-                to="/kids"
-                className={({ isActive }) => (isActive ? "active" : "")}
-                style={{ textDecoration: "none", color: "black" }}
-              >
-                Kids
-              </NavLink>
-            </li>
+            {["/", "/men", "/women", "/kids"].map((path, i) => (
+              <li key={i}>
+                <NavLink
+                  to={path}
+                  className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                  {path === "/"
+                    ? "Shop"
+                    : path.replace("/", "").charAt(0).toUpperCase() +
+                      path.slice(2)}
+                </NavLink>
+              </li>
+            ))}
           </ul>
         </div>
 
-        {/* Login Button */}
-        <Link to="/login">
-          <button className="login">Login</button>
-        </Link>
+        {/* Right Actions */}
+        <div className="right-actions">
+          <Link to="/login">
+            <button className="login">Login</button>
+          </Link>
 
-        {/* Cart */}
-        <Link to="/cart">
-          <div className="cart">
-            <img src={cartIcon} alt="Cart" />
-            {cartItemCount > 0 && (
-              <div className="cart-count">{cartItemCount}</div>
-            )}
+          <Link to="/cart">
+            <div className="cart">
+              <img src={cartIcon} alt="Cart" />
+              {cartItemCount > 0 && (
+                <div className="cart-count">{cartItemCount}</div>
+              )}
+            </div>
+          </Link>
+
+          {/* Mobile Menu Button */}
+          <div className="menu-icon" onClick={() => setMenuOpen(!menuOpen)}>
+            ☰
           </div>
-        </Link>
+        </div>
       </div>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="mobile-menu">
+          <NavLink to="/" onClick={() => setMenuOpen(false)}>
+            Shop
+          </NavLink>
+          <NavLink to="/men" onClick={() => setMenuOpen(false)}>
+            Men
+          </NavLink>
+          <NavLink to="/women" onClick={() => setMenuOpen(false)}>
+            Women
+          </NavLink>
+          <NavLink to="/kids" onClick={() => setMenuOpen(false)}>
+            Kids
+          </NavLink>
+        </div>
+      )}
     </div>
   );
 };

@@ -30,19 +30,69 @@
 }
 
 .loadMore {
-  padding: 10px 15px;
+  display: block;
+  padding: 10px 20px;
   background-color: orangered;
   color: white;
-  width: fit-content;
-  margin: 0 auto;
-  border-radius: 25px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
   transition: all 0.3s ease-in-out;
+  font-family: "Playpen Sans Arabic", cursive;
+  margin: 20px auto;
 }
-.loadMore p {
-  margin: 0;
-}
-.loadMore :hover {
+.loadMore:hover {
   background-color: white;
   color: orangered;
   border: 1px solid orangered;
 }
+
+.sortContainer {
+  position: relative;
+}
+.sortActions {
+  position: absolute;
+  top: 32px;
+  left: 10%;
+  background-color: white;
+
+  border: 1px solid #c2b9b9;
+  border-radius: 0 0 10px 10px;
+  text-align: center;
+}
+
+.sortActions ul {
+  list-style: none;
+  text-align: center;
+  /* padding: 10px 20px; */
+  width: 80px;
+  margin: 0;
+  padding: 0;
+}
+.sortActions ul li {
+  border-bottom: 1px solid #c2b9b9;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  cursor: pointer;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+.sortActions ul li:last-child {
+  border-bottom: none;
+}
+.sortActions ul li:hover {
+  color: orangered;
+  background-color: #eee;
+}
+
+.sortActions ul li:last-child:hover {
+  border-radius: 0 0 10px 10px;
+}
+.notActiveSort {
+  display: none;
+}
+.sortArrow {
+  transition: all 0.3s ease-in-out;
+}
+

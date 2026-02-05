@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { ShopContext } from "../../Contexts/ShopContext";
 import Item from "../../Item/Item";
 import menBanner from "../../Assets/banner_mens.png";
@@ -9,56 +9,86 @@ import "./ShopCategory.css";
 
 const ShopCategory = ({ category }) => {
   const { all_product } = useContext(ShopContext);
-  console.log("allll", all_product);
-  let filteredProducts = [];
-  let banner = "";
-  if (category === "women") {
-    filteredProducts = all_product.filter(
-      (product) => product.category === "women",
+  const [sortMenu, setSortMenu] = useState(false);
+  const [products, setProducts] = useState([]);
+  const [banner, setBanner] = useState("");
+
+  /* ================= Filter products on category change ================= */
+  useEffect(() => {
+    let filtered = [];
+
+    if (category === "women") {
+      filtered = all_product.filter((p) => p.category === "women");
+      setBanner(womenBanner);
+    } else if (category === "men") {
+      filtered = all_product.filter((p) => p.category === "men");
+      setBanner(menBanner);
+    } else {
+      filtered = all_product.filter((p) => p.category === "kid");
+      setBanner(kidsBanner);
+    }
+
+    setProducts(filtered);
+  }, [category, all_product]);
+
+  /* ================= Sort handlers ================= */
+  const sortByPrice = () => {
+    setProducts((prev) => [...prev].sort((a, b) => a.new_price - b.new_price));
+    setSortMenu(false);
+  };
+
+  const sortByName = () => {
+    setProducts((prev) =>
+      [...prev].sort((a, b) => a.name.localeCompare(b.name)),
     );
-    banner = womenBanner;
-  } else if (category === "men") {
-    filteredProducts = all_product.filter(
-      (product) => product.category === "men",
-    );
-    banner = menBanner;
-  } else {
-    filteredProducts = all_product.filter(
-      (product) => product.category === "kid",
-    );
-    banner = kidsBanner;
-  }
+    setSortMenu(false);
+  };
+
   return (
-    <div className="container  shopCategory">
-      <img src={banner} alt="" className="banner" />
+    <div className="container shopCategory">
+      <img src={banner} alt="category banner" className="banner" />
+
       <div className="text">
-        <p>showing 1 - 12 out of {all_product.length} products</p>
-        <div className="sort">
-          {/* <select name="sort" id="sort">
-          <option value="newest">price</option>
-          <option value="newest">name</option>
-        </select> */}
-          sort by
-          <img src={dropDownArrow} alt="" />
+        <p>showing 1 - {products.length} products</p>
+
+        <div className="sortContainer">
+          <div className="sort" onClick={() => setSortMenu(!sortMenu)}>
+            sort by
+            <img
+              src={dropDownArrow}
+              alt=""
+              className="sortArrow"
+              style={{
+                transform: sortMenu ? "rotate(90deg)" : "rotate(0deg)",
+              }}
+            />
+          </div>
+
+          <div
+            className={`sortActions ${sortMenu ? "activeSort" : " notActiveSort"}`}
+          >
+            <ul>
+              <li onClick={sortByPrice}>price</li>
+              <li onClick={sortByName}>name</li>
+            </ul>
+          </div>
         </div>
       </div>
+
       <div className="products">
-        {filteredProducts.map((product) => {
-          return (
-            <Item
-              image={product.image}
-              name={product.name}
-              new_price={product.new_price}
-              old_price={product.old_price}
-              key={product.id}
-              id={product.id}
-            />
-          );
-        })}
+        {products.map((product) => (
+          <Item
+            key={product.id}
+            id={product.id}
+            image={product.image}
+            name={product.name}
+            new_price={product.new_price}
+            old_price={product.old_price}
+          />
+        ))}
       </div>
-      <div className="loadMore">
-        <p>Load More </p>
-      </div>
+
+      <button className="loadMore">Load More...</button>
     </div>
   );
 };
