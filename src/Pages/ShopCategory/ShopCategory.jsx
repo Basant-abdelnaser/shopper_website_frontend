@@ -46,7 +46,7 @@ const ShopCategory = ({ category }) => {
 
   return (
     <div className="container shopCategory">
-      <img src={banner} alt="category banner" className="banner" />
+  {  banner &&  <img src={banner} alt="category banner" className="banner" />}
 
       <div className="text">
         <p>showing 1 - {products.length} products</p>
