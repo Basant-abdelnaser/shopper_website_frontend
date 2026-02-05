@@ -82,5 +82,5 @@ Product search
 Payment integration
 
 Dark mode
-## 📂 Project Structure
+
 
