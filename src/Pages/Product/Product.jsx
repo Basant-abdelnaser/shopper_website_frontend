@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import "./Product.css";
 import RelatedProducts from "../../Components/relatedProducts/RelatedProducts";
 import { ShopContext } from "../../Contexts/ShopContext";
-import Toast, { successToast } from "../../Components/ToastMsg/Toast";
+import  { successToast } from "../../Components/ToastMsg/Toast";
 
 const Product = () => {
   const { id } = useParams();
@@ -12,7 +12,7 @@ const Product = () => {
 
   const [selected, setSelected] = useState(null);
   const [addTocartButton, SetAddToCartButton] = useState(false);
-  const { addToCart, removeFromCart } = useContext(ShopContext);
+  const { addToCart} = useContext(ShopContext);
 
   return (
     <div>
