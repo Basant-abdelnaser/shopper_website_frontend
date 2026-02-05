@@ -83,4 +83,7 @@ Payment integration
 
 Dark mode
 
+---
+published on netlify 
 
+view :https://shoppersite1.netlify.app/ 
