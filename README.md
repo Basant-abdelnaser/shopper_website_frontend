@@ -1,70 +1,86 @@
-# Getting Started with Create React App
+# 🛍️ Shopper – React E-commerce Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Shopper is a modern and responsive e-commerce web application built with **React**.  
+The project focuses on real-world frontend concepts such as routing, state management, reusable components, and responsive UI.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- 🛒 Add / Remove products from cart
+- 📦 Cart page with total price calculation
+- 🔍 Product details page
+- 👕 Category filtering (Men / Women / Kids)
+- ↕️ Sort products by **price** or **name**
+- 📱 Fully responsive design (Desktop & Mobile)
+- ✅ Form validation using **Joi**
+- 🔔 Toast notifications
+- 🧭 Client-side routing with **React Router**
+- 💾 Cart state persisted using Context API
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧑‍💻 Technologies Used
 
-### `npm test`
+- **HTML5**
+- **CSS3**
+- **JavaScript (ES6+)**
+- **React**
+- **React Router DOM**
+- **Context API**
+- **Joi** (form validation)
+- **React Toastify**
+- **Git & GitHub**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📂 Project Structure
+src/
+│── Assets/ # Images & product data
+│── Components/ # Reusable components (Navbar, Item, Toast...)
+│── Pages/ # Pages (Shop, Cart, Product, Login, Signup)
+│── Contexts/ # ShopContext (cart logic)
+│── App.js
+│── index.js
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## ⚙️ Installation & Setup
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
+```bash
+2 - cd shopper_website_frontend
+3-npm install
+4-npm start
+```
 
-### `npm run eject`
+---
+📝 What I Learned From This Project
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Building scalable React components
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Managing global state using Context API
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Handling routing and dynamic routes
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Working with forms and validation
 
-## Learn More
+Improving UI/UX and responsive layouts
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Debugging common React issues
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Writing clean and maintainable code
 
-### Code Splitting
+---
+🌱 Future Improvements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Authentication (Login / Signup with backend)
 
-### Analyzing the Bundle Size
+Wishlist feature
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Product search
 
-### Making a Progressive Web App
+Payment integration
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Dark mode
+## 📂 Project Structure
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
